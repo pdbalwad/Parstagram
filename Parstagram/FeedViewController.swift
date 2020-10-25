@@ -26,8 +26,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
         let query = PFQuery(className:"Posts")
         query.includeKey("author")
         
@@ -41,6 +39,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
     }
     }
+    
+    
+    @IBAction func onLogoutButton(_ sender: Any) {
+        
+        PFUser.logOut()
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count

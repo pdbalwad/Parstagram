@@ -43,6 +43,8 @@ class LoginViewController: UIViewController {
          //user["phone"] = "415-392-0202"
         user.signUpInBackground { (success, error) in
             if success{
+                self.username.text = ""
+                self.passwordTextField.text = ""
                 self.performSegue(withIdentifier: "loginSegue", sender:  nil)
             }
             else{
