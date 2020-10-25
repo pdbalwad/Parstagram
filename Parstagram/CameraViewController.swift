@@ -35,7 +35,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let image = info[.editedImage] as! UIImage
-        let size = CGSize(width: 348, height: 348)
+        let size = CGSize(width: 350, height: 350)
         let scaledImage = image.af_imageScaled(to: size)
         imgView.image = scaledImage
         
@@ -49,7 +49,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         post["author"] = PFUser.current()!
         
         let imageData = imgView.image!.pngData()
-        let file = PFFileObject(data: imageData!)
+        let file = PFFileObject(name: "image.png", data: imageData!)
         post["image"] = file
         
         post.saveInBackground {
