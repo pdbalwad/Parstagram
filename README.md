@@ -1,3 +1,42 @@
+# Parstagram - Part II
+
+This is an Instagram clone with a custom Parse backend that allows a user to post photos, view a global photos feed, and add comments!
+
+Time spent: **5** hours spent in total
+
+## User Stories
+
+The following **required** functionality is completed:
+
+- [x] User stays logged in across restarts. (1pt)
+- [x] User can log out. (1pt)
+- [x] User can view comments on a post. (3pts)
+- [x] User can add a new comment. (5pts)
+
+Implemented missed features from last assignment as well!
+- [x] User can pull to refresh. (1pt)
+- [x] User can load past tweets infinitely. (2pts)
+- [x] User sees app icon in home screen and styled launch screen. (1pt)
+
+The following **bonus** features are implemented:
+
+- [ ] User can add a profile picture. (2pts)
+- [ ] Profile pictures are shown for posts and comments. (2pts)
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+All required features are demonstrated in below GIF:
+<img src='http://g.recordit.co/Jl655lCJxb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+                   
+                   
+ Infinite Scrolling and pull to refresh features are demonstrated in below GIF:                  
+ <img src='http://g.recordit.co/hxStHiklAP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+ 
+                                                                    
+
+
 # Parstagram - Part I
 
 This is an Instagram clone with a custom Parse backend that allows a user to post photos and view a global photos feed.
@@ -16,8 +55,8 @@ The following **required** functionality is completed:
 
 The following **bonus** features are implemented:
 
-- [ ] User can pull to refresh. (1pt)
-- [ ] User can load past tweets infinitely. (2pts)
+- [x] User can pull to refresh. (1pt)
+- [x] User can load past tweets infinitely. (2pts)
 
 ## Video Walkthrough
 
