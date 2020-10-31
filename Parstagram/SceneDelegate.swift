@@ -14,6 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        //staying logged in
         if PFUser.current() != nil{
             let main = UIStoryboard(name: "Main", bundle: nil)
             let feedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")
