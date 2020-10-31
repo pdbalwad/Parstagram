@@ -42,7 +42,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 350, height: 350)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
         imgView.image = scaledImage
         
         dismiss(animated: true, completion: nil)
@@ -65,7 +65,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print("Saved!")
                 
             }else{
-                print("Error:\(error)")
+                print("Error: \(error)")
                 
                 
             }
