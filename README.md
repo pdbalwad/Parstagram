@@ -27,13 +27,21 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-All required features are demonstrated in below GIF:
-<img src='http://g.recordit.co/Jl655lCJxb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-                   
+Required features 1 and 2 are demonstrated in below GIF:
+
+<img src='http://g.recordit.co/h0EO76YlMb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Required features 3 and 4 are demonstrated in below GIF:
+
+<img src='http://g.recordit.co/cbtwMMFRnR.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+ 
+ 
                    
  Infinite Scrolling and pull to refresh features are demonstrated in below GIF:                  
- <img src='http://g.recordit.co/hxStHiklAP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
  
+ <img src='http://g.recordit.co/Orw5CYjR9K.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+ 
+ <img src='http://g.recordit.co/2I49XSxg9h.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
                                                                     
 
 
