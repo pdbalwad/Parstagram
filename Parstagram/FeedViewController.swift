@@ -8,14 +8,18 @@
 import UIKit
 import Parse
 import AlamofireImage
+import MessageInputBar
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var user = PFUser()
     var posts = [PFObject]()
     let myRefreshControl = UIRefreshControl()
     var numberOfPosts: Int!
+    let commentBar = MessageInputBar()
+    var showsCommentBar = false
+    
     
     override func viewDidLoad() {
         
@@ -23,6 +27,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         numberOfPosts = 10
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        commentBar.inputTextView.placeholder = "Add a comment..."
+        commentBar.sendButton.title = "Post"
+        
+        commentBar.delegate = self
+        tableView.keyboardDismissMode = .interactive
+        let center  = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         loadPosts()
         
@@ -34,6 +47,27 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
     }
     
+    
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        //create the comment
+        
+        
+        // dismiss
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
+        
+    }
+    
+    
+    
+    @objc func keyboardWillBeHidden(note: Notification){
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
+        
+    }
     
     
     func loadPosts()
@@ -78,7 +112,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let post = posts[section]
         let comments = (post["comments"] as? [PFObject]) ?? []
         
-        return comments.count + 1
+        return comments.count + 2
         
     }
     
@@ -108,7 +142,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
             return cell
         }
-        else
+        else if indexPath.row <= comments.count
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
             let comment = comments[indexPath.row-1]
@@ -116,6 +150,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let user = comment["author"] as! PFUser
             cell.userLabel.text = user.username
             
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
             return cell
         }
         
@@ -160,7 +198,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.row]
-        let comment = PFObject(className: "Comments")
+        let comments = post["comments"] as? [PFObject] ?? []
+        
+        
+        if indexPath.row == comments.count + 1 {
+            showsCommentBar = true
+            becomeFirstResponder()
+            
+            commentBar.inputTextView.becomeFirstResponder()
+        }
+        
+       /*
         comment["text"] = "This is a random comment"
         comment["post"] = post
         comment["author"] = PFUser.current()!
@@ -177,8 +225,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
             }
             
-        }
+        } */
     }
+    
+    
+    override var inputAccessoryView: UIView?{
+        return commentBar
+        
+    }
+    override var canBecomeFirstResponder: Bool{
+        return showsCommentBar
+    }
+    
+    
     /*
     // MARK: - Navigation
 
