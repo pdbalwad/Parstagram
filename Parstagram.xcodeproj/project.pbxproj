@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A7C2B8F254D104600E630FB /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C2B8E254D104600E630FB /* CommentCell.swift */; };
 		2AFE89BE2544CE89007DD7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFE89BD2544CE89007DD7C6 /* AppDelegate.swift */; };
 		2AFE89C02544CE89007DD7C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFE89BF2544CE89007DD7C6 /* SceneDelegate.swift */; };
 		2AFE89C22544CE89007DD7C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFE89C12544CE89007DD7C6 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A7C2B8E254D104600E630FB /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		2AFE89BA2544CE89007DD7C6 /* Parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFE89BD2544CE89007DD7C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFE89BF2544CE89007DD7C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				2AFE89BF2544CE89007DD7C6 /* SceneDelegate.swift */,
 				2AFE89C12544CE89007DD7C6 /* ViewController.swift */,
 				2AFE89C32544CE89007DD7C6 /* Main.storyboard */,
+				2A7C2B8E254D104600E630FB /* CommentCell.swift */,
 				2AFE89DD2544D059007DD7C6 /* LoginViewController.swift */,
 				2AFE89E02544D068007DD7C6 /* FeedViewController.swift */,
 				2AFE89F32544F1F3007DD7C6 /* PostCell.swift */,
@@ -224,6 +227,7 @@
 				2AFE89BE2544CE89007DD7C6 /* AppDelegate.swift in Sources */,
 				2AFE89C02544CE89007DD7C6 /* SceneDelegate.swift in Sources */,
 				2AFE89F12544E6E7007DD7C6 /* CameraViewController.swift in Sources */,
+				2A7C2B8F254D104600E630FB /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
