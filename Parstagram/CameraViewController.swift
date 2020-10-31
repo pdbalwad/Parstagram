@@ -65,7 +65,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print("Saved!")
                 
             }else{
-                print("Error: \(error)")
+                print("Error:\(error)")
                 
                 
             }

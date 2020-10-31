@@ -64,7 +64,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //let user = posts[0]["author"] as PFUser!
         PFUser.logOut()
-        self.dismiss(animated: true, completion: nil)
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        
+        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        let delegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        delegate.window?.rootViewController = loginViewController
+        //self.dismiss(animated: true, completion: nil)
         
     }
     

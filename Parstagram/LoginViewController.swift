@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     @IBAction func onSignIn(_ sender: Any) {
         let uname = username.text!
         let password = passwordTextField.text!
-        PFUser.logInWithUsername(inBackground:uname, password:password) {
+        PFUser.logInWithUsername(inBackground: uname, password: password) {
           (user, error) in
           if user != nil {
             // Do stuff after successful login.
@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
           }
         }
 
-        
     }
     
     
